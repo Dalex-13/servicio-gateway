@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: service-credit
+        uri: lb://service-credit
+        predicates:
+          - Path=/api/credit/**
+        filters:
+          - StripPrefix=2
+
+
